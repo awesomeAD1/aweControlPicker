@@ -8,7 +8,7 @@ You can determine your user directory from within Maya by executing the followin
 
 `internalVar -usd;`
 
-Copy the PNG images to your icons directory.
+Copy the PNG images from the icons folder to your icons directory.
 Again, under Windows, this is located under `C:\User\Documents\maya\201x\prefs\icons`
 You can determine your icons directory by executing the following command:
 
