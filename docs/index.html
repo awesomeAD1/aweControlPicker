@@ -10,8 +10,8 @@
   
   <title>aweControlPicker by Awesome A.D.</title>
   <base href="https://github.com/awesome-ad/aweControlPicker/tree/master/docs/">
-  <link href="_css/body.css" rel="stylesheet" type="text/css">
-  <script src="_js/script.js"></script>
+  <link href="css/body.css" rel="stylesheet" type="text/css">
+  <script src="js/script.js"></script>
 
   <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -29,7 +29,7 @@
 
    <div class="flexbox flexrow" id="header">
 
-      <img src="_images/aweLogo.png" alt="aweCP" width="102" height="76" class="logo">
+      <img src="images/aweLogo.png" alt="aweCP" width="102" height="76" class="logo">
       <div class="h_title"><a href="#expose"><span style="font-weight: 400">awe</span>ControlPicker</a></div>
       <div class="navBox flexbox flexrow">
          <ul class="nav flexbox flexrow" id="mainnav">
@@ -68,7 +68,7 @@
             <li><a href="#limitations">limitations</a></li>
          </ul>
          <div class="feedback">
-            <a href="https://github.com/awesome-ad/aweControlPicker"><img class="gh_logo" src="_images/gh_logo_dark.png"></a>
+            <a href="https://github.com/awesome-ad/aweControlPicker"><img class="gh_logo" src="images/gh_logo_dark.png"></a>
          </div>
          <div class="clearfix">
          </div>
@@ -102,7 +102,7 @@
       <div class="section">
         <h1><a id="overview"></a>Overview</h1>
      
-    <p><img src="_images/doc_Overview.jpg" alt="aweCP" width="138" height="414" class="docImage">
+    <p><img src="images/doc_Overview.jpg" alt="aweCP" width="138" height="414" class="docImage">
           aweControlPicker is a GUI Picker tool for Autodesk Maya that enables animators to define a bunch of buttons to select
           specific objects (e.g. controllers) in their scene.
           It works much like Character Selection GUIs you've most likely used before, except it's designed to be as minimalistic as
@@ -225,7 +225,7 @@
               </li>
               <li><span class="type doc">d</span> The documentation has been updated to reflect the changes to the script. Additionally, I've added an FAQ section to deal with the most common issues that may arise.
               </li>
-              <li><span class="type removed">r</span> This documentation is no longer downloadable as an offline file due to the maintenance overhead. This site can still be reached by going to <img src="_images/cpOptions.png" width="29" height="25" alt="Options">
+              <li><span class="type removed">r</span> This documentation is no longer downloadable as an offline file due to the maintenance overhead. This site can still be reached by going to <img src="images/cpOptions.png" width="29" height="25" alt="Options">
                 <span class="option">Help</span> and clicking the 'View Online Documentation' button.
               </li>
               <li><span class="type fixed">f</span> The Marking Menu implementation had a bug that caused the wrong Pickers to be displayed and/or
@@ -266,7 +266,7 @@
               </li>
               <li><span class="type new">n</span> There is now an option to hilight Pickers when objects that are associated with them 
                     are selected. This makes it easy to see what Pickers an object belongs to. This option is enabled by default
-                    and can be toggled via <img src="_images/cpOptions.png" width="29" height="25" alt="Options"> <span class="option">UI Display <img src="_images/rightarrow.png"></span><span class="option">Hilite Pickers</span> .<br>
+                    and can be toggled via <img src="images/cpOptions.png" width="29" height="25" alt="Options"> <span class="option">UI Display <img src="images/rightarrow.png"></span><span class="option">Hilite Pickers</span> .<br>
                     Note: This feature is still 'experimental'. Toggle it off if you encounter issues or don't like the effect.
                     More information can be found in the <a href="#uidisplay" title="UI Display Options">Options</a> section
               </li>
@@ -316,7 +316,7 @@
         </p>
         <p>
           Finally, I've supplied an image called <span class="file">aweControlPicker.png</span> 
-            <img src="_images/aweControlPicker.png" width="32" height="32" alt="aweControlPicker"> 
+            <img src="images/aweControlPicker.png" width="32" height="32" alt="aweControlPicker"> 
             that you can use as an icon for your shelfbutton (or not, I mean, that's like, uh, totally up to you).
         </p>
         <p>
@@ -338,9 +338,9 @@
         <h2><a id="editpickers"></a>Creating, editing and deleting pickers</h2>
 
         <p>
-          <img src="_images/doc_CreatePicker.jpg" alt="Edit Pickers" width="216" height="208" class="docImage">
+          <img src="images/doc_CreatePicker.jpg" alt="Edit Pickers" width="216" height="208" class="docImage">
           To add a Picker button, first select one or more objects, then hit the
-          <img src="_images/cpAdd.png" width="34" height="25" alt="PICKR+">
+          <img src="images/cpAdd.png" width="34" height="25" alt="PICKR+">
           button (If nothing is selected, that button will be disabled, since you can't explicitly create "empty" buttons). 
           You will be prompted to add a label for your button and set its color. The resulting Picker will be
           added to the bottom of the currently active tab.<br>
@@ -352,7 +352,7 @@
         <ul class="nostyle">
           <li><span class="option">Add Selection</span> Adds currently selected objects to this Picker's objectlist.</li>
           <li><span class="option">Remove Selection</span> Removes currently selected objects from this Picker's objectlist.
-            <img src="_images/doc_PickerMenu.jpg" alt="Picker menu" width="216" height="137" class="docImage">
+            <img src="images/doc_PickerMenu.jpg" alt="Picker menu" width="216" height="137" class="docImage">
           </li>
           
           <li><span class="option">Edit Picker</span> Edit the Picker's label and/or color.</li>
@@ -373,18 +373,18 @@
           To select objects associated with a particular Picker, simply click it (Yes, it's that easy!).
         </p>
         <p>
-          Just like the viewport, holding down <img src="_images/shift.png" width="44" height="19" alt="shift"> while 
+          Just like the viewport, holding down <img src="images/shift.png" width="44" height="19" alt="shift"> while 
           clicking a Picker will toggle the associated objects' selected state. You can use this modifier to quickly 
           make 'interim' selection groups, for example by quickly 'subtracting' (toggling) the left wrist from the whole arm group, etc.
         </p>
         <p>
-          If you hold <img src="_images/alt.png" width="33" height="19" alt="alt"> while clicking a Picker, the script 
+          If you hold <img src="images/alt.png" width="33" height="19" alt="alt"> while clicking a Picker, the script 
           will attempt to apply the Prefix entered in the <span class="hilite">Prefix Editor</span> on the objects 
           associated with that Picker and select the prefixed objects instead. See the <a href="#prefixes" title="Prefixes">
             Prefixes</a> section below to find out more about how prefixing works in this script.
         </p>
         <p>
-          Hold <img src="_images/ctrl.png" width="33" height="19" alt="ctrl"> and click to quickly
+          Hold <img src="images/ctrl.png" width="33" height="19" alt="ctrl"> and click to quickly
           set a Key on all objects associated with a Picker at the current frame. Read about <a href="#setkeyoptions" title="Set Key Options">
           Key Settings</a> to understand how you can modify this function.
         </p>
@@ -396,20 +396,20 @@
         </p>
         <p>
           To <span class="hilite">move</span> a Picker to a new position in the list, simply middle-mouse 
-          <span class="hilite">drag</span> (<img src="_images/middlemouse.png" width="16" height="16" alt="mmb">) 
+          <span class="hilite">drag</span> (<img src="images/middlemouse.png" width="16" height="16" alt="mmb">) 
           it onto another Picker. Let go on the upper half of a Picker to insert the dragged Picker before, 
           or on the lower half to insert after it.
         </p>
         <p>
           If you wish to <span class="hilite">merge</span> the selection list of two buttons, hold down 
-          <img src="_images/shift.png" width="44" height="19" alt="shift"> and middle-mouse <span class="hilite">drag</span> 
-          (<img src="_images/middlemouse.png" width="16" height="16" alt="mmb">) Picker A on to Picker B. Picker A will 
+          <img src="images/shift.png" width="44" height="19" alt="shift"> and middle-mouse <span class="hilite">drag</span> 
+          (<img src="images/middlemouse.png" width="16" height="16" alt="mmb">) Picker A on to Picker B. Picker A will 
           be deleted (!) and Picker B will now additionally select the objects formerly associated with Picker A.
         </p>
         <p>
           If you wish to create a new Picker <span class="hilite">combining</span> the selection lists of two other 
-          Pickers, hold down <img src="_images/ctrl.png" width="33" height="19" alt="ctrl"> and middle-mouse 
-          <span class="hilite">drag</span> (<img src="_images/middlemouse.png" width="16" height="16" alt="mmb">) 
+          Pickers, hold down <img src="images/ctrl.png" width="33" height="19" alt="ctrl"> and middle-mouse 
+          <span class="hilite">drag</span> (<img src="images/middlemouse.png" width="16" height="16" alt="mmb">) 
           one Picker on to the other. A new Picker is created and the original Pickers are preserved (at least until the polygon unicorn gets hungry...).
         </p>
 
@@ -422,43 +422,43 @@
             </tr>
             <tr class="odd">
               <td>
-                <img src="_images/leftmouse.png" width="16" height="16" alt="LMB">
+                <img src="images/leftmouse.png" width="16" height="16" alt="LMB">
               </td>
               <td>Select Picker objects</td>
             </tr>
             <tr>
               <td>
-                <img src="_images/leftmouse.png" width="16" height="16" alt="LMB">+ <img src="_images/shift.png" width="44" height="19" alt="shift">
+                <img src="images/leftmouse.png" width="16" height="16" alt="LMB">+ <img src="images/shift.png" width="44" height="19" alt="shift">
               </td>
               <td>Toggle Picker object's selection</td>
             </tr>
             <tr class="odd">
               <td>
-                <img src="_images/leftmouse.png" width="16" height="16" alt="LMB"> + <img src="_images/ctrl.png" width="33" height="19" alt="ctrl">
+                <img src="images/leftmouse.png" width="16" height="16" alt="LMB"> + <img src="images/ctrl.png" width="33" height="19" alt="ctrl">
               </td>
               <td>Set Key on Picker objects</td>
             </tr>
             <tr>
               <td>
-                <img src="_images/leftmouse.png" width="16" height="16" alt="LMB"> + <img src="_images/alt.png" width="33" height="19" alt="alt">
+                <img src="images/leftmouse.png" width="16" height="16" alt="LMB"> + <img src="images/alt.png" width="33" height="19" alt="alt">
               </td>
               <td>Use Prefix (works with Ctrl or Shift)</td>
             </tr>
             <tr class="odd">
               <td>
-                <img src="_images/middlemouse.png" width="16" height="16" alt="MMB"> Drag
+                <img src="images/middlemouse.png" width="16" height="16" alt="MMB"> Drag
               </td>
               <td>Move Picker</td>
             </tr>
             <tr>
               <td>
-                <img src="_images/middlemouse.png" width="16" height="16" alt="MMB"> + <img src="_images/shift.png" width="44" height="19" alt="shift"> Drag
+                <img src="images/middlemouse.png" width="16" height="16" alt="MMB"> + <img src="images/shift.png" width="44" height="19" alt="shift"> Drag
               </td>
               <td>Merge Pickers</td>
             </tr>
             <tr class="odd">
               <td>
-                <img src="_images/middlemouse.png" width="16" height="16" alt="MMB"> + <img src="_images/ctrl.png" width="33" height="19" alt="ctrl"> Drag
+                <img src="images/middlemouse.png" width="16" height="16" alt="MMB"> + <img src="images/ctrl.png" width="33" height="19" alt="ctrl"> Drag
               </td>
               <td>Combine Pickers</td>
             </tr>
@@ -474,19 +474,19 @@
         <h2><a id="tabs"></a>Tabs</h2>
 
         <p>
-          <img src="_images/doc_Tabs.jpg" alt="tabs" width="216" height="251" class="docImage">
+          <img src="images/doc_Tabs.jpg" alt="tabs" width="216" height="251" class="docImage">
           The script offers you the ability to organize Pickers into Tabs.<br>
           You can create and delete Tabs
-          via the <img src="_images/cpTab.png" width="40" height="25" alt="TABS*"> button at the top of the UI, but
+          via the <img src="images/cpTab.png" width="40" height="25" alt="TABS*"> button at the top of the UI, but
           note that there must always be at least one tab. Also, deleting a tab (along with its Pickers) or any 
           single Picker is not officially* undoable, so heed the warning message when it appears!<br>
-          You can rename a tab either by doubleclicking its label or via the <img src="_images/cpTab.png" width="40" height="25" alt="TABS*"> 
+          You can rename a tab either by doubleclicking its label or via the <img src="images/cpTab.png" width="40" height="25" alt="TABS*"> 
           option menu. Be aware that certain characters are not valid and will be stripped from the name you enter. Those characters are: comma (,), underscore (_), colon (:), space ( ) and percent (%).
           Also, any name you specify when creating or renaming a tab must be unique amongst tabs (the script will automatically ensure this is the case or pester you with notifications until you get it right).
         </p>
         <p class="note">
           *You can try to undo this buy choosing <span class="option">Edit</span>
-          <span class="option">Undo</span>, then <img src="_images/cpOptions.png" width="29" height="25" alt="Options"> <span class="option">Re-Initialize</span>. 
+          <span class="option">Undo</span>, then <img src="images/cpOptions.png" width="29" height="25" alt="Options"> <span class="option">Re-Initialize</span>. 
           This is actually more  a happy coincidence rather than a designed, failsafe feature though. There's no guarantee that this will always work, so be careful when deleting stuff.
         </p>
       </div>
@@ -498,19 +498,19 @@
         <h2><a id="prefixes"></a>Prefixes</h2>
 
         <p>
-          <img src="_images/doc_PrefixEditor.jpg" alt="Prefix Editor" width="216" height="185" class="docImage">
+          <img src="images/doc_PrefixEditor.jpg" alt="Prefix Editor" width="216" height="185" class="docImage">
           The script offers a limited form of Prefix matching for your selections to
           enable you to switch between Rigs in your scene without having to create new Pickers for each one. Using namespaces is probably the smartest
           way to go about using two identical Rigs in the same scene but the script tries to cover
           the most common – however simple – scenarios. To use a Prefix on a Picker you simply hold
-          <img src="_images/alt.png" width="33" height="19" alt="alt"> while clicking it.
+          <img src="images/alt.png" width="33" height="19" alt="alt"> while clicking it.
         </p>
         <p>
           Currently, there are three Prefix modes available: <span class="hilite">Prefix</span>,
           <span class="hilite">Hierarchy</span> and <span class="hilite">Namespace</span>.<br>
           All modes require you to input some string in the respective text field located in the
           <span class="hilite">Prefix Editor</span> (if you can't see the Prefix Editor, make sure it
-          is enabled under <img src="_images/cpOptions.png" width="29" height="25" alt="Options">
+          is enabled under <img src="images/cpOptions.png" width="29" height="25" alt="Options">
           <span class="option">UI Display</span>).<br>
           See the following sections for a rundown on how to use the various modes available.
          </p>
@@ -552,7 +552,7 @@
         <p>
           If you had created a Picker for the object 'BoyEyeControl' and wanted to use the same button to select 
           'GirlEyeControl' instead, you could enter 'Boy' into the current prefix field, and 'Girl' into the 
-          alternate prefix field. <img src="_images/alt.png" width="33" height="19" alt="alt">-clicking the Picker 
+          alternate prefix field. <img src="images/alt.png" width="33" height="19" alt="alt">-clicking the Picker 
           would now select 'GirlEyeControl'.
         </p>
         <p style="clear: left">
@@ -588,7 +588,7 @@
 
         <p>
           As you see, the rigs/hierarchies are identical except for the name of the top-most node. If you enable <span class="hilite">Hierarchy</span> mode, 
-          you could enter "CharacterB" in the Prefix field. Now <img src="_images/alt.png" width="33" height="19" alt="alt">-
+          you could enter "CharacterB" in the Prefix field. Now <img src="images/alt.png" width="33" height="19" alt="alt">-
           clicking the Picker will select the EyeControl under CharacterB instead of CharacterA.
         </p>
 
@@ -628,7 +628,7 @@
         <p>
           If you had created a Picker for the object "BoyRig:EyeControl", but wanted to use it to select 
           "GirlRig:EyeControl" instead, you can set Prefix Mode to <span class="hilite">Namespace</span> and enter "GirlRig" (without the colon and quotation marks!)
-          into the Prefix field. <img src="_images/alt.png" width="33" height="19" alt="alt">-clicking the Picker will 
+          into the Prefix field. <img src="images/alt.png" width="33" height="19" alt="alt">-clicking the Picker will 
           now select "GirlRig:EyeControl".<br>
           By the way, this also works if an object you alternatively want to select is in the "root" namespace 
           (identified in the outliner by not having any "namespace:" prefix). In that case, simply leave the prefix field blank.
@@ -641,7 +641,7 @@
         <h2><a id="markingmenu"></a>MarkingMenu</h2>
 
         <p>
-          <img src="_images/doc_MarkingMenu.jpg" alt="Marking Menu" width="216" height="173" class="docImage">
+          <img src="images/doc_MarkingMenu.jpg" alt="Marking Menu" width="216" height="173" class="docImage">
           The script provides an optional Marking Menu that you can use. It enables you to popup a menu inside the 
           viewport (amongst other panels) listing all the existing Pickers right at your mouse cursor.<br>
           The Marking Menu has the advantage that it doesn't require the main user interface to be visible, taking 
@@ -654,7 +654,7 @@
 
         <ol>
           <li>Find a free hotkey, i.e. one that has neither its 'press' nor 'release' state assigned</li>
-          <li>Under <span class="option">Window</span><span class="option">Settings/Preferences <img src="_images/rightarrow.png"></span><span class="option">Hotkey Editor</span>, create a new hotkey<br></li>
+          <li>Under <span class="option">Window</span><span class="option">Settings/Preferences <img src="images/rightarrow.png"></span><span class="option">Hotkey Editor</span>, create a new hotkey<br></li>
           <li>
             Assign the following command to this hotkey's <span class="hilite">press</span> state:<br>
             <code>if(`exists aweCPBuildMM`) aweCPBuildMM();</code>
@@ -672,7 +672,7 @@
 
         <p>
           Now that your hotkeys are set up, hover the mouse over the viewport, hold down your new hotkey and the 
-          left mouse button (in that order: Hotkey + <img src="_images/leftmouse.png" width="16" height="16" alt="LMB">). 
+          left mouse button (in that order: Hotkey + <img src="images/leftmouse.png" width="16" height="16" alt="LMB">). 
             A menu will appear listing all your Pickers. Move the mouse over the menu item of your choice and release 
             the mouse button.
         </p>
@@ -682,8 +682,8 @@
         </p>
         <p>
           Note that, as with the Picker buttons themselves, the items in the MarkingMenu also work with 
-          <a href="#hotkeys" title="Modifier Keys">modifiers</a> (<img src="_images/leftmouse.png" width="16" height="16" alt="LMB">+
-          <img src="_images/shift.png" width="44" height="19" alt="shift">/<img src="_images/ctrl.png" width="33" height="19" alt="ctrl">).
+          <a href="#hotkeys" title="Modifier Keys">modifiers</a> (<img src="images/leftmouse.png" width="16" height="16" alt="LMB">+
+          <img src="images/shift.png" width="44" height="19" alt="shift">/<img src="images/ctrl.png" width="33" height="19" alt="ctrl">).
         </p>
       </div>
       <!-- end section 'Other Features' -->
@@ -692,7 +692,7 @@
         <h1><a id="options"></a>Options</h1>
 
         <p>
-          Here's a list of functions you'll find in the Options menu <img src="_images/cpOptions.png" width="29" height="25" alt="Options">, 
+          Here's a list of functions you'll find in the Options menu <img src="images/cpOptions.png" width="29" height="25" alt="Options">, 
           which is the right-most button at the top of the UI. Note that any settings you modify are saved and 
           remembered the next time you run the script.
         </p>
@@ -700,7 +700,7 @@
         <h2><a id="saveload"></a>Save and Load Pickers</h2>
 
         <p>
-          <img src="_images/doc_OptionsLoad.jpg" alt="Load and Save" width="216" height="147" class="docImage">
+          <img src="images/doc_OptionsLoad.jpg" alt="Load and Save" width="216" height="147" class="docImage">
           The script allows you to 'export' your current Picker configuration to a file on disk by choosing 
           <span class="option">Save Pickers</span>. Simply enter a filename in the dialog that opens up and 
           your Pickers will be saved as <span class="file">filename.cpf</span>.
@@ -737,20 +737,20 @@
         <h2><a id="mmOptions"></a>MarkingMenu</h2>
 
         <p>
-          <img src="_images/doc_OptionsMM.jpg" alt="MarkingMenu Options" width="216" height="183" class="docImage">
+          <img src="images/doc_OptionsMM.jpg" alt="MarkingMenu Options" width="216" height="183" class="docImage">
           In the <span class="option">MarkingMenu</span> submenu of the Options, you can set how the MarkingMenu 
           works and where it shall appear.
         </p>
         <p>You can select between the following two modes:</p>
         <p>
-          <span class="option"><img src="_images/radiobutton.png"> Show only current tab</span><br>
+          <span class="option"><img src="images/radiobutton.png"> Show only current tab</span><br>
           This is the default mode. The MarkingMenu will act like it does when there is only one Tab present: it
           will display a single list of Pickers according to the tab that is currently active in the
           UI. To access Pickers from a different tab, you will have to switch to that tab first.<br>
           This mode allows for the fastest access to a specific subset (tab) of Pickers you want to work with.
         </p>
         <p>
-          <span class="option"><img src="_images/radiobutton.png"> Show all tabs</span><br>
+          <span class="option"><img src="images/radiobutton.png"> Show all tabs</span><br>
           In this mode, the MarkingMenu will show a list of submenus, one for each existing tab. To
           access the Pickers of a tab, hover over the name of that tab to display its contents, and
           select a Picker from the list.<br>
@@ -767,9 +767,9 @@
         <h2><a id="uidisplay"></a>UI Display</h2>
 
         <p>
-          <img src="_images/doc_OptionsUI.jpg" alt="UI Options" width="216" height="183" class="docImage">
+          <img src="images/doc_OptionsUI.jpg" alt="UI Options" width="216" height="183" class="docImage">
           Since the script is designed to offer the most minimalistic interface, it offers
-          the options to hide and style certain UI elements via the <span class="option">UI Display <img src="_images/rightarrow.png"></span> menu:
+          the options to hide and style certain UI elements via the <span class="option">UI Display <img src="images/rightarrow.png"></span> menu:
         </p>
         <p>
           <span class="option">Display Shaded Pickers</span><br>
@@ -831,12 +831,12 @@
           ctrl-click them). Because, based on these options, some objects may get keyed while others may not, it is important to understand the different settings and how they affect the keying functionality of the script.
         </p>
         <p>
-          <span class="option"><img src="_images/radiobutton.png"> Key all objects</span><br>
+          <span class="option"><img src="images/radiobutton.png"> Key all objects</span><br>
           This is the default setting. Choose this option to key every object in the Picker's objectlist, regardless whether it already has any keys set (i.e. is animated).
           This is the default behaviour since it is probably what most users would expect to happen.
         </p>
         <p>
-          <span class="option"><img src="_images/radiobutton.png"> Key animated objects</span><br>
+          <span class="option"><img src="images/radiobutton.png"> Key animated objects</span><br>
           Choose this option if you only want keys to be set on objects that already have keys (i.e. are animated). Objects without any animation
           will remain unkeyed. This option helps keep your scene clean without adding unnecessary animation curves and allows you to manually define
           what objects will be keyed when you use this functionality.<br>
@@ -846,7 +846,7 @@
           <span class="option">Animated Channels only</span><br>
           Checking this option modifies how the above setting works when set to 'Key animated objects'. If checked, keys will only bet set on attributes that are already animated; any other attribute will be left untouched. For example, if an object belonging to this Picker had
           animation on the translation channels, but <span class="italic">not</span> on the rotation channels, then keys will only bet set on the translation attributes.<br>
-          Note that this option only becomes enabled when the above setting is set to <span class="option"><img src="_images/radiobutton.png"> Key animated objects</span> , because it implies that there be a distinction between animated/non-animated objects. Thus, when set to <span class="option">Key all objects</span> , this option is ignored.
+          Note that this option only becomes enabled when the above setting is set to <span class="option"><img src="images/radiobutton.png"> Key animated objects</span> , because it implies that there be a distinction between animated/non-animated objects. Thus, when set to <span class="option">Key all objects</span> , this option is ignored.
         </p>
 
         <h2><a id="other"></a>Other Options</h2>
@@ -856,7 +856,7 @@
         </p>
         <p>
           <span class="option">Re-Initialize Pickers</span><br>
-          <img src="_images/doc_Help.jpg" alt="Help" width="216" height="272" class="docImage"> 
+          <img src="images/doc_Help.jpg" alt="Help" width="216" height="272" class="docImage"> 
           This function scans the scene for Picker information, i.e. Tabs and Pickers, and updates the UI
           to reflect any changes.<br>
           Usually, there shouldn't be any need for you to manually trigger this function (it is called automatically
@@ -896,7 +896,7 @@
           </h2>
           <p class="answer">
             The scriptJob event to detect import/reference actions was introduced in Maya 2012. If you're using an earlier
-            release, you need to manually trigger the update. Go to <img src="_images/cpOptions.png" width="29" height="25" alt="Options"> <span class=" option">Re-Initialize</span>. Now your Picker list 
+            release, you need to manually trigger the update. Go to <img src="images/cpOptions.png" width="29" height="25" alt="Options"> <span class=" option">Re-Initialize</span>. Now your Picker list 
             should be up to date.
           </p>
 
@@ -915,12 +915,12 @@
             You can try the following steps:
           </p>
             <ol>
-              <li>With the referenced file loaded in your master scene file, go to <img src="_images/cpOptions.png" width="29" height="25" alt="Options"> <span class="option">Save Pickers</span></li>
+              <li>With the referenced file loaded in your master scene file, go to <img src="images/cpOptions.png" width="29" height="25" alt="Options"> <span class="option">Save Pickers</span></li>
               <li>Save the file anywhere you want.</li>
               <li>Close the master scene file and open the <span class="italic">referenced file</span> directly</li>
-              <li>Save a backup copy of the reference file, then go to <img src="_images/cpOptions.png" width="29" height="25" alt="Options"> <span class="option">Reset</span>. In the dialog that pops up, choose "Reset Pickers".</li>
+              <li>Save a backup copy of the reference file, then go to <img src="images/cpOptions.png" width="29" height="25" alt="Options"> <span class="option">Reset</span>. In the dialog that pops up, choose "Reset Pickers".</li>
               <li>Save the reference file and close it.</li>
-              <li>Open your master file again and make sure the referenced file is loaded. Go to <img src="_images/cpOptions.png" width="29" height="25" alt="Options"> <span class="option">Load Pickers</span>. Load the file you saved in Step 1.</li>
+              <li>Open your master file again and make sure the referenced file is loaded. Go to <img src="images/cpOptions.png" width="29" height="25" alt="Options"> <span class="option">Load Pickers</span>. Load the file you saved in Step 1.</li>
             </ol>
           <p class="answer">
             If all went well, you should have your Pickers back, except now they shouldn't be referenced. Make sure everything is still working as expected. If so, you can delete the backup you created in Step 4.
