@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="keywords" content="GUI, GUI Picker, Animation, Autodesk, Maya, MEL, Script">
+  <meta name="description" content="aweControlPicker is a GUI Picker for Maya 2011 and higher. Versatile, easy to use and pleasing to the eye.">
+  <meta name="author" content="Awesome A.D.">
+  
+  <title>aweControlPicker by Awesome A.D.</title>
+  
+  <link href="_css/body.css" rel="stylesheet" type="text/css">
+  <script src="_js/script.js"></script>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if lte IE 9]>
+  <script>
+    window.ie9 = true;
+  </script>
+  <![endif]-->
+</head>
+
+<body>
+
+<div class="container">
+
+   <div class="flexbox flexrow" id="header">
+
+      <img src="_images/aweLogo.png" alt="aweCP" width="102" height="76" class="logo">
+      <div class="h_title"><a href="#expose"><span style="font-weight: 400">awe</span>ControlPicker</a></div>
+      <div class="navBox flexbox flexrow">
+         <ul class="nav flexbox flexrow" id="mainnav">
+            <li><a href="#overview">overview</a>
+               <ul class="subnav flexbox flexrow sn_left">
+                  <li><a href="#featurelist">features</a></li>
+                  <li><a href="#license">license</a></li>
+                  <li><a href="#changelog">changelog</a></li>
+               </ul>
+            </li>
+            <li><a href="#installation">installation</a></li>
+            <li><a href="#usage">usage</a>
+               <ul class="subnav flexbox flexrow sn_left">
+                  <li><a href="#editpickers">editing pickers</a></li>
+                  <li><a href="#pickerfunctions">picker functions</a></li>
+                  <li><a href="#modifiers">using modifiers</a></li>
+                  <li><a href="#tabs">tabs</a></li>
+               </ul>
+            </li>
+            <li><a href="#features">features</a>
+               <ul class="subnav flexbox flexrow sn_left">
+                  <li><a href="#prefixes">prefixes</a></li>
+                  <li><a href="#markingmenu">marking menu</a></li>
+               </ul>
+            </li>
+            <li><a href="#options">options</a>
+               <ul class="subnav flexbox flexrow sn_left">
+                  <li><a href="#saveload">save &amp; load</a></li>
+                  <li><a href="#mmOptions">MarkingMenu</a></li>
+                  <li><a href="#uidisplay">UI display</a></li>
+                  <li><a href="#setkeyoptions">Set Keys</a></li>
+                  <li><a href="#other">misc</a></li>
+               </ul>
+            </li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#limitations">limitations</a></li>
+         </ul>
+         <div class="feedback">
+            <a href="https://github.com/awesome-ad/aweControlPicker"><img class="gh_logo" src="_images/gh_logo_dark.png"></a>
+         </div>
+         <div class="clearfix">
+         </div>
+      </div>
+      <!-- end .navBox -->
+    </div>
+    <!-- end header -->
+
+    <div class="content">
+      
+      <div class="ex_container flexbox flexrow" id="expose">
+        <div class="expose">
+          <p class="slug">
+            aweControlPicker is a minimalistic, clean and versatile GUI Picker for Maya that works with any rig.
+            Sporting a slick interface, easy Picker organisation, no-hassle access to important functions and unique features such as the built-in MarkingMenu, this script will take your workflow to a whole new level of awesomeness!
+          </p>
+          <p class="sig">
+            'Awesome' A.D.
+          </p>
+        </div>
+        <div class="filebox">
+          <p class="ex_title">download</p>
+          <a class="dlbutton" title="Download aweControlPicker" href="https://github.com/awesome-ad/aweControlPicker/releases/download/v1.4/aweControlPicker.zip">aweControlPicker.zip</a>
+          <p>requires Maya 2011+</p>
+          <p>latest version: 1.0.4</p>
+          <p><a id="viewChangeLog">view changelog</a></p>
+        </div>
+      </div>
+
+
+      <div class="section">
+        <h1><a id="overview"></a>Overview</h1>
+     
+    <p><img src="_images/doc_Overview.jpg" alt="aweCP" width="138" height="414" class="docImage">
+          aweControlPicker is a GUI Picker tool for Autodesk Maya that enables animators to define a bunch of buttons to select
+          specific objects (e.g. controllers) in their scene.
+          It works much like Character Selection GUIs you've most likely used before, except it's designed to be as minimalistic as
+        possible, can be edited on the fly, works with any rig and provides ease of access to maximize the speed of your workflow.<br>
+          The main functionality is quite simple: you select one or more objects, add a Picker for the current selection and voilà!<br>
+          Pickers can be labelled, configured to display in one of 12 colors, organized into tabs you create and re-ordered at 
+          will. All Pickers and tabs, as well as their order of appearance, are stored with the scene and will be automatically loaded
+          whenever you run the script. Additionally, you can save your Picker configuration out to a  file, which can then be
+          loaded back into Maya to restore your configuration.
+        </p>
+
+        <p>
+          The script works by creating an objectSet for each Picker. This Set will hold any
+          objects associated with that Picker, enabling the script to work with arbitrary rigs and
+          allowing you the flexibility to rename or reparent associated objects without having to worry about breaking the
+          respective Picker's functionality.</p>
+        <p>
+          The following document provides an extensive overview of the script's functionality and explanations for its usage.
+            You are encouraged to take a gander, though the daredevils among you may opt to simply ignore my efforts and not 
+            RTFM. Suit yourself.
+        </p>
+        <p>
+          Special thanks to my personal Lab-Rat aka Alpha-Tester <a href="http://www.animitt.com/" target="_blank">David Nilsson</a> for his valuable input throughout the development of this script.
+        </p>
+
+        <h2><a id="featurelist"></a>Features</h2>
+
+        <ul class="featureList">
+          <li>Create GUI Pickers for arbitrary object collections</li>
+          <li>Slick, clean, minimalistic and customizable interface</li>
+          <li>Freely edit position and appearance of Pickers</li>
+          <li>Organize Pickers into Tabs</li>
+          <li>Pickers can select and also set keys on objects</li>
+          <li>Pickers change functionality when shift, ctrl and alt modifiers are used</li>
+          <li>GUI Window is dockable, remembers size and position between sessions</li>
+          <li>Automated alternate Prefix matching (Prefix, Hierarchy, Namespace)</li>
+          <li>Stores Pickers with scene</li>
+          <li>Works automatically with imported and referenced scenes (that contain Pickers)</li>
+          <li>Unique MarkingMenu to access Pickers from the Viewport, Graph Editor and other panels</li>
+          <li>Save and Load Picker GUI for easy transfer and sharing</li>
+          <li>Written entirely in MEL and cleanly formatted in anticipation of your eager perusal</li>
+          <li>Over <span style="text-decoration:line-through;">700</span> 800 lines of comments for easy user modification and extendability</li>
+        </ul>
+        
+        <h2><a id="license"></a>Usage and distribution license</h2>
+        
+        <ul>
+          <li>You are free copy, modify and extend this script to suit your own needs or to add features.</li>
+          <li>You may also distribute this script freely, providing that
+            <ol type="a">
+              <li>you do not charge any fee or monetize it in any way</li>
+              <li>you ensure the completeness of the package (i.e. include all necessary images, etc.)</li>
+            </ol>
+          </li>  
+          <li>If you modify and/or distribute this script, I ask that
+            <ol type="a">
+              <li>you provide proper credit and a link back to this site
+              <li>you notify me of changes you made so I can marvel at your efforts</li>
+              <li>you go to the greatest lengths possible to ensure your modified code does not contain any bugs
+            </ol>
+          </li>
+        </ul>
+        
+        <h2>Important information</h2>
+        
+        <p style="color: #C60000;">
+          Do not tamper with the objectSets!
+        </p>
+        <p>
+          As mentioned, the script relies heavily (heck, exclusively!) on the use of objectSets to perform its duties.
+          Internally, all Tabs and Pickers are represented by objectSets. Since there is no way to 'hide' objectSets and thus
+          prevent their exposure within the DAG, they are susceptible to modification via the User (yes, that's you!).
+          Therefore, I'm obliged to give you this warning.
+        </p>
+        <p>
+          Any objectSet starting with <span class="code">(namespace:)aweCP_</span>
+          is managed and used by the script. If you really, <span class="italic">really</span> need to you can
+            group these sets into their own set, but bear in mind that doing so will create more clutter in the case that you
+            reference such a scene into another scene.
+        </p>
+        
+        <h2><a id="changelog"></a>Changelog</h2>
+        <div id="cl_wrapper">
+          <p class="legend">
+                <span class="type new">N</span> new <span class="type fixed">f</span> fixed <span class="type update">u</span> update
+                <span class="type removed">r</span> removed <span class="type doc">d</span> documentation
+          </p>
+
+
+          <h3 class="cl">1.0.4</h3>
+            <ul class="changelog">
+              <li><span class="type fixed">F</span> A bug caused Maya to crash when trying to start the script 
+              on OSX. This has finally been fixed. (Big thanks to Lee Gramling for pointing out the cause!)
+              </li>
+            </ul>
+
+
+          <h3 class="cl">Hotfix 1.0.3.5</h3>
+
+          <ul class="changelog">
+            <li><span class="type fixed">F</span> Renaming a tab to an empty string caused Maya to crash. This has been fixed so that doing so simply
+              cancels the dialog with an error message.
+            </li>
+            <li><span class="type fixed">F</span> In Maya 2013, the fileDialog command has undergone a subtle change, causing it to no longer
+              properly recognize the right file extension (.cpf) when using the 'Save' and 'Load' dialogs. This has been fixed (Thanks Ümit for
+              reporting the bugs)
+            </li>
+          </ul>
+
+          <h3 class="cl">1.0.3</h3>
+
+            <ul class="changelog">
+              <li><span class="type fixed">F</span> The implementation of a sceneEvent that doesn't exist in versions prior to Maya 2012 caused an error for users on Maya 2011. Those users must now manually trigger the <span class="option">Re-Initialize</span> command after importing or referencing scenes with Pickers in order to update the Picker list.
+              </li>
+              <li><span class="type new">N</span> There is now a setting to define how the 'Set Key' function behaves when ctrl-clicking a Picker (Key all objects, Key animated objects, Key animated channels only). Make sure to read <a href="#setkeyoptions" title="Set Key Options">how these settings affect your workflow</a>.
+              </li>
+              <li><span class="type update">U</span> Rewrote the CPClick command (formerly CPSelect) to account for the added option described above and restructured the code in the process.
+              </li>
+              <li><span class="type update">u</span> Made a maintainence pass on the code, cleaning and streamlining the procedure comments (the description now also informs of functions each procedure depends on).
+              </li>
+              <li><span class="type doc">d</span> The documentation has been updated to reflect the changes to the script. Additionally, I've added an FAQ section to deal with the most common issues that may arise.
+              </li>
+              <li><span class="type removed">r</span> This documentation is no longer downloadable as an offline file due to the maintenance overhead. This site can still be reached by going to <img src="_images/cpOptions.png" width="29" height="25" alt="Options">
+                <span class="option">Help</span> and clicking the 'View Online Documentation' button.
+              </li>
+              <li><span class="type fixed">f</span> The Marking Menu implementation had a bug that caused the wrong Pickers to be displayed and/or
+                the wrong objects to be selected under certain tab configurations.
+              </li>
+            </ul>
+          
+          <h3 class="cl">1.0.2</h3>
+          
+            <ul class="changelog">
+              <li><span class="type fixed">f</span> An incompatability issue between OSX and Windows caused the implementation of the
+                  Picker drag 'n drop behaviour to be faulty on OSX systems. The code was modified to work around the problem.
+                    (Thanks <a href="http://www.zurbrigg.com/" target="_blank">Chris Zurbrigg</a> for helping out)
+            </li>
+              <li><span class="type fixed">f</span> A bug caused the UI to not display or be properly populated after
+               closing the UI window and subsequently running aweControlPicker() to reactivate it. (Thanks Leandro for the heads-up)
+              </li>
+              <li><span class="type update">u</span> The <span class="option">Reset</span> command now offers the option to Reset only Pickers, only UI, or both.
+              </li>
+              <li><span class="type new">n</span> In addition to remembering its size and whether it was docked or floating, the UI window will now also remember its position between sessions, provided it was floating when
+              Maya was closed.
+              </li>
+              <li><span class="type new">n</span> <span class="code">aweCPDockWindow()</span> command.<br>
+                  Docks the UI and makes it visible/raises it to the top of the stack. Implemented to avoid the issue 
+                    of users 'losing' their UI if it was moved into screenspace that became non-existent between sessions.
+                    This command is not accessible via the UI and has to be executed manually instead.
+              </li>
+            </ul>
+          <h3 class="cl">1.0.1</h3>
+          
+            <ul class="changelog">
+              <li><span class="type fixed">f</span> A silly bug prevented the script from being run at all on OSX, due to differences
+                  in the line-ending format on the platform the script was written in (Windows: CR/LF).
+                    I modified the code to avoid having to use such nefarious techniques. (Thanks Eduardo for bringing this to my attention)
+              </li>
+              <li><span class="type fixed">f</span> An error in the implementation of the MovePicker() command caused some Pickers to 
+                    reappear in the wrong tab under the wrong circumstances. (Merci Tom for noticing the bug)
+              </li>
+              <li><span class="type new">n</span> There is now an option to hilight Pickers when objects that are associated with them 
+                    are selected. This makes it easy to see what Pickers an object belongs to. This option is enabled by default
+                    and can be toggled via <img src="_images/cpOptions.png" width="29" height="25" alt="Options"> <span class="option">UI Display <img src="_images/rightarrow.png"></span><span class="option">Hilite Pickers</span> .<br>
+                    Note: This feature is still 'experimental'. Toggle it off if you encounter issues or don't like the effect.
+                    More information can be found in the <a href="#uidisplay" title="UI Display Options">Options</a> section
+              </li>
+          </ul>
+
+        </div> <!-- end cl_wrapper -->
+        <div id="cl_toggle">
+          <a href="">show more</a>
+        </div>
+        
+      </div>
+      <!-- end section 'Overview' -->
+
+      <div class="section">
+        <h1><a id="installation"></a>Installation</h1>
+
+        <p>Installing the script is very easy. Just follow these short steps and you'll be up and running in no time.
+        </p>
+        <p><span class="inum">1</span>Copy the script file <span class="file">aweControlPicker.mel</span> to your scripts directory.<br>
+            On Windows, this is located under
+          <span class="file">C:\Username\Documents\maya\201x\scripts</span>.
+          You can determine the location of your scripts directory from within Maya by executing the following MEL command:
+        </p>
+        <p>
+          <code>internalVar -usd;</code>
+        </p>
+        <p><span class="inum">2</span>
+          Copy the PNG images to your icons directory.<br>
+            Again, under Windows, this is located under
+            <span class="file">C:\Username\Documents\maya\201x\prefs\icons</span>.
+          You can determine your icons directory by executing the following command:
+        </p>
+        <p>
+          <code>internalVar -ubd;</code>
+        </p>
+        <p><span class="inum">3</span>
+          Now all that needs to be done is initialize the script; do this the first time you install the script and whenever you update the file in the future. Start Maya if it wasn't already running and execute the following MEL command:
+        </p>
+        <p>
+          <code>source "aweControlPicker.mel";</code>
+        </p>
+        <p><span class="inum">4</span>
+          To start using the script, you execute the following command (I recommend creating a shelfbutton for convenience):
+        </p>
+        <p>
+          <code>aweControlPicker;</code>
+        </p>
+        <p>
+          Finally, I've supplied an image called <span class="file">aweControlPicker.png</span> 
+            <img src="_images/aweControlPicker.png" width="32" height="32" alt="aweControlPicker"> 
+            that you can use as an icon for your shelfbutton (or not, I mean, that's like, uh, totally up to you).
+        </p>
+        <p>
+          That's it! Enoy using the script!<br>
+          Oh, by the way, there are instructions on setting up the awesome <span class="hilite">aweControlPicker MarkingMenu</span> of Awesomeness
+          which you can find <a href="#markingmenu" title="MarkingMenu">here</a>, but don't get ahead of yourself!
+        </p>
+      </div>
+      <!-- end section 'Installation' -->
+
+      <div class="section">
+        <h1><a id="usage"></a>Using the Script</h1>
+
+        <p>
+          This section explains how to use the script and what the main functions are. While I designed the UI to be as intuitive as possible,
+          it may be helpful to read up on what's possible with it (would you have guessed that you can drag Pickers around and merge them?)
+        </p>
+
+        <h2><a id="editpickers"></a>Creating, editing and deleting pickers</h2>
+
+        <p>
+          <img src="_images/doc_CreatePicker.jpg" alt="Edit Pickers" width="216" height="208" class="docImage">
+          To add a Picker button, first select one or more objects, then hit the
+          <img src="_images/cpAdd.png" width="34" height="25" alt="PICKR+">
+          button (If nothing is selected, that button will be disabled, since you can't explicitly create "empty" buttons). 
+          You will be prompted to add a label for your button and set its color. The resulting Picker will be
+          added to the bottom of the currently active tab.<br>
+          You can add as many Pickers per tab as you like (well, up to 999, but... why?).
+        </p>
+        <p>
+          Right-clicking a Picker displays a Popup Menu that allows you to edit a Picker in the following ways:
+        </p>
+        <ul class="nostyle">
+          <li><span class="option">Add Selection</span> Adds currently selected objects to this Picker's objectlist.</li>
+          <li><span class="option">Remove Selection</span> Removes currently selected objects from this Picker's objectlist.
+            <img src="_images/doc_PickerMenu.jpg" alt="Picker menu" width="216" height="137" class="docImage">
+          </li>
+          
+          <li><span class="option">Edit Picker</span> Edit the Picker's label and/or color.</li>
+          <li><span class="option">Clear Objects</span> Removes all objects from this Picker, making it 'empty'.</li>
+          <li><span class="option">Delete</span> Deletes this Picker (this is not <span class="italic">officially</span> undoable!).</li>
+        </ul>
+        <p class="note">
+          <span class="hilite"><strong>Note</strong></span>:<br>
+          The script doesn't distinguish, nor does it care, what type of object you add to the
+          selection list of a Picker. As long as it's a valid DAG object, you can create a Picker for
+          it. This makes the script useful not only for selecting animation controls, but virtually
+          any other node you want quick access to, e.g. shaders, constraints, geometry, polygon unicorns, etc.
+        </p>
+
+        <h2><a id="pickerfunctions"></a>Picker functions and key modifiers</h2>
+
+        <p>
+          To select objects associated with a particular Picker, simply click it (Yes, it's that easy!).
+        </p>
+        <p>
+          Just like the viewport, holding down <img src="_images/shift.png" width="44" height="19" alt="shift"> while 
+          clicking a Picker will toggle the associated objects' selected state. You can use this modifier to quickly 
+          make 'interim' selection groups, for example by quickly 'subtracting' (toggling) the left wrist from the whole arm group, etc.
+        </p>
+        <p>
+          If you hold <img src="_images/alt.png" width="33" height="19" alt="alt"> while clicking a Picker, the script 
+          will attempt to apply the Prefix entered in the <span class="hilite">Prefix Editor</span> on the objects 
+          associated with that Picker and select the prefixed objects instead. See the <a href="#prefixes" title="Prefixes">
+            Prefixes</a> section below to find out more about how prefixing works in this script.
+        </p>
+        <p>
+          Hold <img src="_images/ctrl.png" width="33" height="19" alt="ctrl"> and click to quickly
+          set a Key on all objects associated with a Picker at the current frame. Read about <a href="#setkeyoptions" title="Set Key Options">
+          Key Settings</a> to understand how you can modify this function.
+        </p>
+
+        <h2><a id="modifiers"></a>Manipulating Pickers</h2>
+
+        <p>
+          Pickers can be manipulated in a variety of ways by using the middle-mouse button and dragging them onto other Pickers:
+        </p>
+        <p>
+          To <span class="hilite">move</span> a Picker to a new position in the list, simply middle-mouse 
+          <span class="hilite">drag</span> (<img src="_images/middlemouse.png" width="16" height="16" alt="mmb">) 
+          it onto another Picker. Let go on the upper half of a Picker to insert the dragged Picker before, 
+          or on the lower half to insert after it.
+        </p>
+        <p>
+          If you wish to <span class="hilite">merge</span> the selection list of two buttons, hold down 
+          <img src="_images/shift.png" width="44" height="19" alt="shift"> and middle-mouse <span class="hilite">drag</span> 
+          (<img src="_images/middlemouse.png" width="16" height="16" alt="mmb">) Picker A on to Picker B. Picker A will 
+          be deleted (!) and Picker B will now additionally select the objects formerly associated with Picker A.
+        </p>
+        <p>
+          If you wish to create a new Picker <span class="hilite">combining</span> the selection lists of two other 
+          Pickers, hold down <img src="_images/ctrl.png" width="33" height="19" alt="ctrl"> and middle-mouse 
+          <span class="hilite">drag</span> (<img src="_images/middlemouse.png" width="16" height="16" alt="mmb">) 
+          one Picker on to the other. A new Picker is created and the original Pickers are preserved (at least until the polygon unicorn gets hungry...).
+        </p>
+
+        <h3><a id="hotkeys"></a>Hotkey Summary</h3>
+        <p>
+          <table class="hotkeys" cellspacing="0">
+            <tr>
+              <th scope="col">Mousebutton / Key Combo</th>
+              <th scope="col">Function</th>
+            </tr>
+            <tr class="odd">
+              <td>
+                <img src="_images/leftmouse.png" width="16" height="16" alt="LMB">
+              </td>
+              <td>Select Picker objects</td>
+            </tr>
+            <tr>
+              <td>
+                <img src="_images/leftmouse.png" width="16" height="16" alt="LMB">+ <img src="_images/shift.png" width="44" height="19" alt="shift">
+              </td>
+              <td>Toggle Picker object's selection</td>
+            </tr>
+            <tr class="odd">
+              <td>
+                <img src="_images/leftmouse.png" width="16" height="16" alt="LMB"> + <img src="_images/ctrl.png" width="33" height="19" alt="ctrl">
+              </td>
+              <td>Set Key on Picker objects</td>
+            </tr>
+            <tr>
+              <td>
+                <img src="_images/leftmouse.png" width="16" height="16" alt="LMB"> + <img src="_images/alt.png" width="33" height="19" alt="alt">
+              </td>
+              <td>Use Prefix (works with Ctrl or Shift)</td>
+            </tr>
+            <tr class="odd">
+              <td>
+                <img src="_images/middlemouse.png" width="16" height="16" alt="MMB"> Drag
+              </td>
+              <td>Move Picker</td>
+            </tr>
+            <tr>
+              <td>
+                <img src="_images/middlemouse.png" width="16" height="16" alt="MMB"> + <img src="_images/shift.png" width="44" height="19" alt="shift"> Drag
+              </td>
+              <td>Merge Pickers</td>
+            </tr>
+            <tr class="odd">
+              <td>
+                <img src="_images/middlemouse.png" width="16" height="16" alt="MMB"> + <img src="_images/ctrl.png" width="33" height="19" alt="ctrl"> Drag
+              </td>
+              <td>Combine Pickers</td>
+            </tr>
+          <tr>
+              <td>
+                left right left left up right down down left up
+              </td>
+              <td>Summon Polygon Unicorn to animate for you for 15 minutes</td>
+            </tr>
+          </table>
+        </p>
+
+        <h2><a id="tabs"></a>Tabs</h2>
+
+        <p>
+          <img src="_images/doc_Tabs.jpg" alt="tabs" width="216" height="251" class="docImage">
+          The script offers you the ability to organize Pickers into Tabs.<br>
+          You can create and delete Tabs
+          via the <img src="_images/cpTab.png" width="40" height="25" alt="TABS*"> button at the top of the UI, but
+          note that there must always be at least one tab. Also, deleting a tab (along with its Pickers) or any 
+          single Picker is not officially* undoable, so heed the warning message when it appears!<br>
+          You can rename a tab either by doubleclicking its label or via the <img src="_images/cpTab.png" width="40" height="25" alt="TABS*"> 
+          option menu. Be aware that certain characters are not valid and will be stripped from the name you enter. Those characters are: comma (,), underscore (_), colon (:), space ( ) and percent (%).
+          Also, any name you specify when creating or renaming a tab must be unique amongst tabs (the script will automatically ensure this is the case or pester you with notifications until you get it right).
+        </p>
+        <p class="note">
+          *You can try to undo this buy choosing <span class="option">Edit</span>
+          <span class="option">Undo</span>, then <img src="_images/cpOptions.png" width="29" height="25" alt="Options"> <span class="option">Re-Initialize</span>. 
+          This is actually more  a happy coincidence rather than a designed, failsafe feature though. There's no guarantee that this will always work, so be careful when deleting stuff.
+        </p>
+      </div>
+     <!-- end section 'Usage' -->
+
+      <div class="section">
+        <h1><a id="features"></a>Other Features</h1>
+
+        <h2><a id="prefixes"></a>Prefixes</h2>
+
+        <p>
+          <img src="_images/doc_PrefixEditor.jpg" alt="Prefix Editor" width="216" height="185" class="docImage">
+          The script offers a limited form of Prefix matching for your selections to
+          enable you to switch between Rigs in your scene without having to create new Pickers for each one. Using namespaces is probably the smartest
+          way to go about using two identical Rigs in the same scene but the script tries to cover
+          the most common – however simple – scenarios. To use a Prefix on a Picker you simply hold
+          <img src="_images/alt.png" width="33" height="19" alt="alt"> while clicking it.
+        </p>
+        <p>
+          Currently, there are three Prefix modes available: <span class="hilite">Prefix</span>,
+          <span class="hilite">Hierarchy</span> and <span class="hilite">Namespace</span>.<br>
+          All modes require you to input some string in the respective text field located in the
+          <span class="hilite">Prefix Editor</span> (if you can't see the Prefix Editor, make sure it
+          is enabled under <img src="_images/cpOptions.png" width="29" height="25" alt="Options">
+          <span class="option">UI Display</span>).<br>
+          See the following sections for a rundown on how to use the various modes available.
+         </p>
+
+        <h3>Prefix</h3>
+
+        <p>
+          This is the most straightforward of the Prefix modes. It works by replacing a string of characters you 
+          provide with a different set of characters on the objects associated with a Picker.<br>
+          This requires you to enter two sets of strings: the current Prefix on the objects actually
+          associated with a Picker, and an alternative Prefix which you'd like to use instead to
+          identify a different set of objects. The script will <span class="italic">replace the current prefix
+          with the alternate prefix</span> on every object and try to select it. If that fails, it will try to replace 
+            the prefixes on every node in each object's hierarchy in an attempt to find it.
+        </p>
+        <p>
+          Here's an example:<br>
+          Say you imported the rig 'Blob' twice into your scene. Instead of using a namespace in the Import dialog you chose to use a 
+          string prefix (how naughty!) to resolve name-clashes –
+          each time using a different prefix, e.g. 'Boy' and 'Girl'. Your rigs in Maya may look something like this:
+        </p>
+
+        <div class="clearfix">
+          <div class="hierarchy">
+            BoyBlob<br>
+            |--- BoyHeadControls<br>
+            |----|--- BoyFaceControls<br>
+            |----|----|--- BoyEyeControl
+          </div>
+
+          <div class="hierarchy">
+            GirlBlob<br>
+            |--- GirlHeadControls<br>
+            |----|--- GirlFaceControls<br>
+            |----|----|--- GirlEyeControl
+          </div>
+        </div>
+
+        <p>
+          If you had created a Picker for the object 'BoyEyeControl' and wanted to use the same button to select 
+          'GirlEyeControl' instead, you could enter 'Boy' into the current prefix field, and 'Girl' into the 
+          alternate prefix field. <img src="_images/alt.png" width="33" height="19" alt="alt">-clicking the Picker 
+          would now select 'GirlEyeControl'.
+        </p>
+        <p style="clear: left">
+          Summary: Enter current and replacement prefixes into the respective textfields.
+        </p>
+
+        <h3>Hierarchy</h3>
+
+        <p>
+          In this mode, you can switch the Picker's selection to work between multiple rigs that
+          are <span class="italic">absolutely identical except for the top-most node</span> in the hierarchy. Let's try to
+          exemplify this:<br>
+          Say you have a rig "CharacterA" in your scene and you've created a Picker for "EyeControl".
+          If you duplicate the rig, Maya creates "CharacterA1", which you then rename to "CharacterB"
+          (because you're a diligent person and you fear flesh-eating polygon unicorns). Here are the two rig hierarchies:
+        </p>
+
+        <div class="clearfix">
+          <div class="hierarchy">
+            CharacterA<br>
+            |--- HeadControls<br>
+            |----|--- FaceControls<br>
+            |----|----|--- EyeControl
+          </div>
+
+          <div class="hierarchy">
+            CharacterB<br>
+            |--- HeadControls<br>
+            |----|--- FaceControls<br>
+            |----|----|--- EyeControl
+          </div>
+        </div>
+
+        <p>
+          As you see, the rigs/hierarchies are identical except for the name of the top-most node. If you enable <span class="hilite">Hierarchy</span> mode, 
+          you could enter "CharacterB" in the Prefix field. Now <img src="_images/alt.png" width="33" height="19" alt="alt">-
+          clicking the Picker will select the EyeControl under CharacterB instead of CharacterA.
+        </p>
+
+        <p>
+          Summary: Enter the name of the top-most node of the rig/hierarchy you want to use alternatively.
+        </p>
+
+        <h3>Namespace</h3>
+
+        <p>
+          In this mode, the script will try to <span class="italic">switch between the namespaces of objects</span>
+          as you define them, provided their <span class="italic">DAG hierarchies are otherwise identical</span>
+            (i.e. differ only in namespace). This is very similar to the <span class="hilite">Prefix</span> mode, except it
+          is designed to work with Maya's namespace feature as opposed to arbitrarily defined prefixes.<br>
+          For example, you could create a Picker for an object inside the namespace "BoyRig" and
+          switch to the same object in the namespace "GirlRig", independent of the namespace the
+          object actually resides in (which in this case would be BoyRig).<br>
+          Let's use the example hierarchy above for clarification (but modified with namespaces):
+        </p>
+
+        <div class="clearfix">
+          <div class="hierarchy">
+            BoyRig:Rig<br>
+            |--- BoyRig:HeadControls<br>
+            |----|--- BoyRig:FaceControls<br>
+            |----|----|--- BoyRig:EyeControl
+          </div>
+
+          <div class="hierarchy">
+            GirlRig:Rig<br>
+            |--- GirlRig:HeadControls<br>
+            |----|--- GirlRig:FaceControls<br>
+            |----|----|--- GirlRig:EyeControl<br>
+          </div>
+        </div>
+
+        <p>
+          If you had created a Picker for the object "BoyRig:EyeControl", but wanted to use it to select 
+          "GirlRig:EyeControl" instead, you can set Prefix Mode to <span class="hilite">Namespace</span> and enter "GirlRig" (without the colon and quotation marks!)
+          into the Prefix field. <img src="_images/alt.png" width="33" height="19" alt="alt">-clicking the Picker will 
+          now select "GirlRig:EyeControl".<br>
+          By the way, this also works if an object you alternatively want to select is in the "root" namespace 
+          (identified in the outliner by not having any "namespace:" prefix). In that case, simply leave the prefix field blank.
+        </p>
+
+        <p>
+          Summary: Enter the namespace of the object you want to use alternatively, ommitting the ":" (colon).
+        </p>
+
+        <h2><a id="markingmenu"></a>MarkingMenu</h2>
+
+        <p>
+          <img src="_images/doc_MarkingMenu.jpg" alt="Marking Menu" width="216" height="173" class="docImage">
+          The script provides an optional Marking Menu that you can use. It enables you to popup a menu inside the 
+          viewport (amongst other panels) listing all the existing Pickers right at your mouse cursor.<br>
+          The Marking Menu has the advantage that it doesn't require the main user interface to be visible, taking 
+          up less screen real estate, while simultaneously offering the most efficient way (in terms of mouse movement)
+          to access your Pickers.
+         </p>
+        <p>
+          To make use of the MarkingMenu, you will need to follow these steps:
+        </p>
+
+        <ol>
+          <li>Find a free hotkey, i.e. one that has neither its 'press' nor 'release' state assigned</li>
+          <li>Under <span class="option">Window</span><span class="option">Settings/Preferences <img src="_images/rightarrow.png"></span><span class="option">Hotkey Editor</span>, create a new hotkey<br></li>
+          <li>
+            Assign the following command to this hotkey's <span class="hilite">press</span> state:<br>
+            <code>if(`exists aweCPBuildMM`) aweCPBuildMM();</code>
+          </li>
+          <li>
+            Create a second hotkey for the <span class="italic">same</span> key, but
+            this time for its <span class="hilite">release</span> state<br>
+          </li>
+          <li>
+            Assign the following command to this second hotkey:<br>
+            <code>if(`exists aweCPDeleteMM`) aweCPDeleteMM();</code>
+          </li>
+          <li>Save!</li>
+        </ol>
+
+        <p>
+          Now that your hotkeys are set up, hover the mouse over the viewport, hold down your new hotkey and the 
+          left mouse button (in that order: Hotkey + <img src="_images/leftmouse.png" width="16" height="16" alt="LMB">). 
+            A menu will appear listing all your Pickers. Move the mouse over the menu item of your choice and release 
+            the mouse button.
+        </p>
+        <p>
+          In case you have more than one Tab set up for your Pickers, the MarkingMenu provides alternative functionality
+          (see the <a href="#mmOptions" title="MarkingMenu Options">MarkingMenu Options</a> for details).
+        </p>
+        <p>
+          Note that, as with the Picker buttons themselves, the items in the MarkingMenu also work with 
+          <a href="#hotkeys" title="Modifier Keys">modifiers</a> (<img src="_images/leftmouse.png" width="16" height="16" alt="LMB">+
+          <img src="_images/shift.png" width="44" height="19" alt="shift">/<img src="_images/ctrl.png" width="33" height="19" alt="ctrl">).
+        </p>
+      </div>
+      <!-- end section 'Other Features' -->
+
+      <div class="section">
+        <h1><a id="options"></a>Options</h1>
+
+        <p>
+          Here's a list of functions you'll find in the Options menu <img src="_images/cpOptions.png" width="29" height="25" alt="Options">, 
+          which is the right-most button at the top of the UI. Note that any settings you modify are saved and 
+          remembered the next time you run the script.
+        </p>
+
+        <h2><a id="saveload"></a>Save and Load Pickers</h2>
+
+        <p>
+          <img src="_images/doc_OptionsLoad.jpg" alt="Load and Save" width="216" height="147" class="docImage">
+          The script allows you to 'export' your current Picker configuration to a file on disk by choosing 
+          <span class="option">Save Pickers</span>. Simply enter a filename in the dialog that opens up and 
+          your Pickers will be saved as <span class="file">filename.cpf</span>.
+        </p>
+        <p>
+          Obviously, you can also load any such .cpf files back into Maya by choosing <span class="option">Load Pickers</span>.
+          You will be prompted whether to Replace or Append the loaded Pickers. Choosing <span class="hilite">Replace</span> 
+          will delete all existing Tabs and Pickers before adding the ones specified in the file. 
+          <span class="hilite">Append</span>, on the other hand, will do just that: append the Tabs and Pickers 
+          in the loaded file to the existing ones.
+        </p>
+
+        <p class="note">
+          <span class="hilite"><strong>Note</strong></span>:<br>
+          Because Tab labels must always be unique, appending a file that contains a tab with a label
+          that already exists will automatically add a number to the end of the loaded tab's label,
+          making it unique (e.g. 'Pickers' becomes 'Pickers1').
+        </p>
+
+        <p class="note">
+          <span class="hilite"><strong>Note</strong></span>:<br>
+          Every object associated with a Picker is saved as a string identifying its absolute
+          DAG-path in the scene hierarchy. When loading a .cpf file, the script attempts to find each
+          object in the current scene and re-associate it with the Picker. If the object does not
+          exist in the current scene (or has been renamed, or reparented, etc.), the association will
+          fail and the Picker button will no longer select that object. You will be notified if any
+          such issues occured during loading.<br>
+          That said, if you find you have such an issue with your .CPF file and the solution would be to simply prefix 
+          every object in the file, then you can open the .cpf file in any text editor and apply those 
+          changes there before loading it in Maya. Beware not to mess up the document structure though or the script, 
+          awesome as it may be, won't be able to correctly parse it.
+        </p>
+
+        <h2><a id="mmOptions"></a>MarkingMenu</h2>
+
+        <p>
+          <img src="_images/doc_OptionsMM.jpg" alt="MarkingMenu Options" width="216" height="183" class="docImage">
+          In the <span class="option">MarkingMenu</span> submenu of the Options, you can set how the MarkingMenu 
+          works and where it shall appear.
+        </p>
+        <p>You can select between the following two modes:</p>
+        <p>
+          <span class="option"><img src="_images/radiobutton.png"> Show only current tab</span><br>
+          This is the default mode. The MarkingMenu will act like it does when there is only one Tab present: it
+          will display a single list of Pickers according to the tab that is currently active in the
+          UI. To access Pickers from a different tab, you will have to switch to that tab first.<br>
+          This mode allows for the fastest access to a specific subset (tab) of Pickers you want to work with.
+        </p>
+        <p>
+          <span class="option"><img src="_images/radiobutton.png"> Show all tabs</span><br>
+          In this mode, the MarkingMenu will show a list of submenus, one for each existing tab. To
+          access the Pickers of a tab, hover over the name of that tab to display its contents, and
+          select a Picker from the list.<br>
+          This mode grants you access to all Pickers in all tabs, however it requires two 'steps' to
+          access any single Picker (show MarkingMenu, show Submenu).
+        </p>
+        <p>
+          Furthermore, you can specify in which <span class="hilite">Panels</span> you want the
+          MarkingMenu to appear. Simply select or deselect a panel in the menu to enable or disable
+          the MarkingMenu in that panel. Currently available panels include the Viewport, the
+          Outliner, the Graph Editor and the Hypershade.
+        </p>
+ 
+        <h2><a id="uidisplay"></a>UI Display</h2>
+
+        <p>
+          <img src="_images/doc_OptionsUI.jpg" alt="UI Options" width="216" height="183" class="docImage">
+          Since the script is designed to offer the most minimalistic interface, it offers
+          the options to hide and style certain UI elements via the <span class="option">UI Display <img src="_images/rightarrow.png"></span> menu:
+        </p>
+        <p>
+          <span class="option">Display Shaded Pickers</span><br>
+          You can choose whether you prefer your Pickers to look 'cool' and 'awesome' and whatnot by
+          displaying them as 'shaded', which simply adds a little graphic overlay and a fake drop
+          shadow effect to them. The alternative is boring, flat buttons.<br>
+          Note that when this option is enabled the Picker's label will be left-aligned; when disabled, it will be centered.
+        </p>
+        <p>
+          <span class="option">Show Prefix Editor</span><br>
+          If you find you don't need the Prefix Editor (or you're done using it), you can hide it to
+          free up some space. It is visible by default, just so you know it exists ;-)
+        </p>
+        <p>
+          <span class="option">Show Tab labels</span><br>
+          You can show or hide the tab labels to further maximize the space available for Picker
+          buttons. Note that changing this setting modifies the behavior of the two buttons (<span class="option"> « </span> <span class="option"> » </span>) above the Picker list:<br>
+          When Tab Labels are set to be visible, the buttons act as a way to rearrange Tabs in the layout; 
+          you can move the currently active tab left or right (the script attempts to store and retrieve this position 
+          information within the configuration, so the next time you load the UI, the tab order will be remembered).<br>
+          When Tab Labels are set to be hidden, the buttons act as a means for you to cycle between Tabs (which would 
+          otherwise be impossible); pressing the buttons no longer changes the position of Tabs within the layout, but instead simply displays the next/previous tab.
+        </p>
+        <p>
+          <span class="option">Hilite Pickers</span><br>
+          This option enables Picker highlighting and is enabled by default. What it does is monitor your current selection 
+          and add a bright background to Pickers that have matching objects in their sets.
+        </p>
+        <p class="note">
+          <span class="hilite"><strong>Note</strong></span>:<br>
+          This feature is as of yet still in 'experimental' state. Because there is no in-built way to monitor the 
+          connection between an interactive UI element (such as the button) and a DAG object, the script has to perform a 
+          complete check for all objects and Pickers whenever you change the selection. While this 
+          <span class="italic">shouldn't</span> impact performance in a noticeable way (internal tests with heavy data structures revealed &lt; 20ms calculation times), it has the 
+          <span class="italic">potential to</span>, especially if you have created a very large set of Pickers or are selecting 
+          many objects at once (define 'many': anything more than a few hundred). If you experience performance issues, particulary
+            <span class="italic">selection lag</span> while using this feature, simply uncheck the option and see whether that was the cause.
+            <span class="italic">("To his face they called him 'Awesome', yet behind his back they whispered, 'Fearmonger'")</span>
+        </p>
+        <p>
+          <span class="option">Resize UI for Tabs</span><br>
+          This option toggles an automatic behavior that makes the UI resize every time you create,
+          delete or rename a tab (as well as when this happens internally via the load and
+          re-initialize functions). By doing this, the script tries to ensure that all tabs fit and
+          are visible within the width of the UI without having to scroll horizontally.
+        </p>
+        <p class="note">
+          <span class="hilite"><strong>Note</strong></span>:<br>
+          As there is no practical way for the script to actually measure the width of every tab and
+          resize accordingly, it tries to guess an appropriate width. This results in a more or less
+          accurate resizing, however it is still merely an educated guess.
+          Disable this option if you don't want the UI to jump in size whenever you modify tabs.
+        </p>
+
+        <h2><a id="setkeyoptions"></a>Set Key Options</h2>
+
+        <p>
+          The options found in this menu dictate the behaviour of Pickers when you use them to key their associated objects (i.e. when you
+          ctrl-click them). Because, based on these options, some objects may get keyed while others may not, it is important to understand the different settings and how they affect the keying functionality of the script.
+        </p>
+        <p>
+          <span class="option"><img src="_images/radiobutton.png"> Key all objects</span><br>
+          This is the default setting. Choose this option to key every object in the Picker's objectlist, regardless whether it already has any keys set (i.e. is animated).
+          This is the default behaviour since it is probably what most users would expect to happen.
+        </p>
+        <p>
+          <span class="option"><img src="_images/radiobutton.png"> Key animated objects</span><br>
+          Choose this option if you only want keys to be set on objects that already have keys (i.e. are animated). Objects without any animation
+          will remain unkeyed. This option helps keep your scene clean without adding unnecessary animation curves and allows you to manually define
+          what objects will be keyed when you use this functionality.<br>
+          Choosing this option enables the next option to be set.
+        </p>
+        <p>
+          <span class="option">Animated Channels only</span><br>
+          Checking this option modifies how the above setting works when set to 'Key animated objects'. If checked, keys will only bet set on attributes that are already animated; any other attribute will be left untouched. For example, if an object belonging to this Picker had
+          animation on the translation channels, but <span class="italic">not</span> on the rotation channels, then keys will only bet set on the translation attributes.<br>
+          Note that this option only becomes enabled when the above setting is set to <span class="option"><img src="_images/radiobutton.png"> Key animated objects</span> , because it implies that there be a distinction between animated/non-animated objects. Thus, when set to <span class="option">Key all objects</span> , this option is ignored.
+        </p>
+
+        <h2><a id="other"></a>Other Options</h2>
+
+        <p>
+          Finally, there are a few more functions intended to give you as much control over the script as possible:
+        </p>
+        <p>
+          <span class="option">Re-Initialize Pickers</span><br>
+          <img src="_images/doc_Help.jpg" alt="Help" width="216" height="272" class="docImage"> 
+          This function scans the scene for Picker information, i.e. Tabs and Pickers, and updates the UI
+          to reflect any changes.<br>
+          Usually, there shouldn't be any need for you to manually trigger this function (it is called automatically
+          whenever you load, import or reference a scene, <span class="italic">except on Maya 2011</span>), but it is there just in case . However, it can be useful in the case that you accidentally deleted a Picker, or reset the UI etc. While deleting UI elements isn't 
+          actually undoable per se, deleting objectSets <span class="italic">is</span>, which is 
+          what happens when you delete a tab or Picker. To undo such an action, choose <span class="option">Edit</span><span class="option">Undo</span>, then hit <span class="option">Re-Initialize Pickers</span> to try and recreate any such deleted UI elements.
+        </p>
+        <p>
+          <span class="option">Reset UI</span><br>
+          This function resets the script to its default settings (MarkingMenu and Display options),
+          deletes all and any existing Tabs and Pickers and recreates the UI. You will be presented with a dialog in which you can
+          choose what action to perform.<br>
+          Note that Tabs and Pickers that originate from References in the current scene can not be
+          deleted and will persist until you unload the respective Reference. In that case Reset will not
+          create the default, empty 'Pickers' tab; instead, the referenced Tabs and Pickers will take its place.
+        </p>
+        <p>
+          <span class="option">Help</span><br>
+          Opens a window with some information about how to use the script, as well as showing an
+          overview of the available Key Modifiers (alt, control, shift) you can use along with
+          Pickers in case you can't remember them. Basically a condensed, not-so-pretty version of this document.
+        </p>
+        
+      </div>
+      <!-- end section 'Options' -->
+
+      <div class="section">
+        <h1><a id="faq"></a>FAQ</h1>
+
+        <div class="faq">
+          <p>
+            Here's a list of tips and answers to (what I believe might be) common questions:
+          </p>
+
+          <h2 class="question">
+            <span class="q">Q:</span> I'm on Maya 2011 and my Pickers don't update when I import/reference a file.
+          </h2>
+          <p class="answer">
+            The scriptJob event to detect import/reference actions was introduced in Maya 2012. If you're using an earlier
+            release, you need to manually trigger the update. Go to <img src="_images/cpOptions.png" width="29" height="25" alt="Options"> <span class=" option">Re-Initialize</span>. Now your Picker list 
+            should be up to date.
+          </p>
+
+           <h2 class="question">
+            <span class="q">Q:</span> My GUI was floating on a second monitor. I changed my screen configuration and now the GUI is stuck off-screen. How do I get it back?
+          </h2>
+          <p class="answer">
+            Run the following MEL command in the command line or scriptEditor: <span class="code">aweCPDockWindow();</span>
+            <br>This will dock the GUI to the left of your viewport and make it visible
+          </p>
+
+          <h2 class="question">
+            <span class="q">Q:</span> I referenced a scene containing Pickers. How can I move the Pickers from the referenced scene into my master scene so that they are no longer referenced?
+          </h2>
+          <p class="answer">
+            You can try the following steps:
+          </p>
+            <ol>
+              <li>With the referenced file loaded in your master scene file, go to <img src="_images/cpOptions.png" width="29" height="25" alt="Options"> <span class="option">Save Pickers</span></li>
+              <li>Save the file anywhere you want.</li>
+              <li>Close the master scene file and open the <span class="italic">referenced file</span> directly</li>
+              <li>Save a backup copy of the reference file, then go to <img src="_images/cpOptions.png" width="29" height="25" alt="Options"> <span class="option">Reset</span>. In the dialog that pops up, choose "Reset Pickers".</li>
+              <li>Save the reference file and close it.</li>
+              <li>Open your master file again and make sure the referenced file is loaded. Go to <img src="_images/cpOptions.png" width="29" height="25" alt="Options"> <span class="option">Load Pickers</span>. Load the file you saved in Step 1.</li>
+            </ol>
+          <p class="answer">
+            If all went well, you should have your Pickers back, except now they shouldn't be referenced. Make sure everything is still working as expected. If so, you can delete the backup you created in Step 4.
+          </p>
+
+          <h2 class="question">
+            <span class="q">Q:</span> I installed the script and tried to run it, but I'm getting an error and nothing happens.
+          </h2>
+          <p class="answer">
+            Make sure you follow every step in the <a href="#installation" title="Installation">installation instructions</a>. In particular,
+            make sure you executed the command <span class="code">source aweControlPicker.mel;</span> after copying the script to your scripts folder.
+            This ensures that the file is properly parsed and the settings are initialized. In fact, because settings may be added in updated versions, it is important you run that code <span class="italic">whenever you update the script</span>.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="section">
+        <h1><a id="limitations"></a>Limitations</h1>
+
+        <p>
+          There are several currently known limitations of the script:
+        </p>
+        <ul>
+          <li>
+            Due to this script's usage of certain UI elements and functionality, it requires the
+            Qt user interface library, which became part of Maya starting from Maya 2011. The script
+            most certainly will not work with versions prior to that.
+          </li>
+          <li>
+            The script has been designed to automatically cope with referenced files (and thus,
+            referenced Picker data). However, due to how the script relies on objectSets to describe
+            said data, it can't delete or modify Pickers that originate from referenced files. This
+            imposes limitations on the user regarding such Pickers and tabs. Hence, it is strongly
+            recommended that you create all Pickers in the master file in which you will be working
+            (after referencing all other files), if you have such privileges.
+          </li>
+          <li>
+            While loading a .CPF will always restore the Picker controls themselves, the
+            associated objects will only be restored if they are found at the same absolute DAG path
+            they were saved as. If any object specified in the .CPF file doesn't exist, was renamed
+            or had its location in the DAG hierarchy changed, it will be excluded from its Picker and
+            you will have to manually re-add it.
+          </li>
+          <li>
+            In Maya 2011 there seems to be a glitch with how Maya determines the Panel currently
+            under the cursor.<br>
+            For the User this means that the MarkingMenu popup behavior can seem erratic and even
+            broken. To fix this, the User should try toggling between any two Panel configurations
+            (e.g. single Perspective view, switch to Four View, then back to Single Perspective View).
+          </li>
+          <li>
+            The Picker configuration is stored as part of the scene description. If the scene is not saved after 
+            creating Pickers, they will be lost when the current scene is closed.
+          </li>
+          <li>
+            Namespace prefixes involving child-namespaces (e.g. :myNamespace:myChildNamespace:myObject) may or 
+            may not work. Probably not...
+          </li>
+          <li>
+            A bug in Maya's iconTextButton MEL command causes the -disabledImage flag to be ignored.
+            Doesn't break anything, just makes it less pretty
+          </li>
+          <li>
+            A bug in the Autodesk's implementation of the dockControl causes the UI to sometimes not
+            remember its current width when its state is changed from Floating to Docked. Also, to be
+            able to resize the window vertically after it has been floated, you may have to re-dock
+            it and re-float it again first before that is possible.
+          </li>
+          <li>
+            ... and possibly many more I can't think of right now. If you notice something, make sure to tell me!</li>
+        </ul>
+        
+      </div>
+      <!-- end section 'Limitations' -->
+         
+      </div>   <!-- end .content -->
+</div>
+
+</body>
+</html>
