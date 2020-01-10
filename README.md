@@ -27,3 +27,6 @@ To start using the script, create a shelfbutton with the following command:
 Finally, I've supplied an image called aweControlPicker.png ![icon](https://github.com/awesome-ad/aweControlPicker/blob/master/icons/aweControlPicker.png) that you can use as an icon for your shelfbutton.
 
 That's it!
+
+# Documentation
+To learn everything about this tool, check out the extensive [online documentation](https://awesome-ad.github.io/aweControlPicker/)
