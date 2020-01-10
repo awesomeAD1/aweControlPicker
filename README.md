@@ -1,5 +1,7 @@
 # aweControlPicker
 aweControlPicker is a minimalistic, clean and versatile GUI Picker for Maya that works with any rig. Sporting a slick interface, easy Picker organisation, no-hassle access to important functions and unique features such as the built-in MarkingMenu, this script will take your workflow to a whole new level of awesomeness!
+
+[Download latest version](https://github.com/awesome-ad/aweControlPicker/releases/download/v1.4/aweControlPicker.zip)
 ## Installation
 
 Copy the script file (aweControlPicker.mel) to your scripts directory.
