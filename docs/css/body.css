@@ -125,6 +125,7 @@ a {
 	font-weight: 300;
 	color: #666;
 	text-shadow: 1px 1px 1px #DDD;
+	word-spacing: -.3em;
 	line-height: 54px;
 	vertical-align: middle;
 	-webkit-box-flex: 0;
@@ -300,15 +301,18 @@ a {
 }
 
 .feedback {
-	width: 90px;
+	width: max-content;
+	padding: 0 16px;
 	height: 54px;
 	background: none;
 	display: flex;
+	flex-direction: row;
 	align-items: center;
 }
 
 .gh_logo {
-	height: 32px;
+	height: 24px;
+	width: 24px;
 }
 
 .content {
