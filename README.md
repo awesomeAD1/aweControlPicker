@@ -29,4 +29,4 @@ Finally, I've supplied an image called aweControlPicker.png ![icon](https://gith
 That's it!
 
 # Documentation
-To learn everything about this tool, check out the extensive [online documentation](https://awesome-ad.github.io/aweControlPicker/)
+To learn everything about this tool, check out the extensive [online documentation](https://awesomead1.github.io/aweControlPicker/)
